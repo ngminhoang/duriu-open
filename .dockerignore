@@ -1,0 +1,9 @@
+#target
+.m2
+.git
+.idea
+*.iml
+README.md
+**/node_modules
+**/dist
+
