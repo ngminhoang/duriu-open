@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS person (
+  id BIGSERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  email VARCHAR(255) UNIQUE,
+  age INTEGER,
+  created_at TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS letter (
+  id BIGSERIAL PRIMARY KEY,
+  gmail VARCHAR(255),
+  content TEXT,
+  created_at TIMESTAMP
+);
+
+

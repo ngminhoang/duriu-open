@@ -6,4 +6,19 @@ services:
       - 'POSTGRES_PASSWORD=secret'
       - 'POSTGRES_USER=myuser'
     ports:
-      - '5432'
+      - '5432:5432'
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_R2DBC_URL=r2dbc:postgresql://postgres:5432/mydatabase
+      - SPRING_R2DBC_USERNAME=myuser
+      - SPRING_R2DBC_PASSWORD=secret
+      - SPRING_PROFILES_ACTIVE=default
+      - SPRING_R2DBC_POOL_ENABLED=true
+    ports:
+      - '8080:8080'
