@@ -25,6 +25,7 @@ public class LetterController {
 
     @PostMapping
     public Mono<ResponseEntity<Object>> create(@RequestBody Letter letter) {
+        System.out.println("add new letter");
         return service.create(letter)
                 .map(saved -> ResponseEntity.ok().body((Object) saved))
                 .onErrorResume(IllegalArgumentException.class, ex -> Mono.just(ResponseEntity.badRequest().body((Object) ex.getMessage())));
