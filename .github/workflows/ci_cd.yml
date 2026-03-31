@@ -28,9 +28,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ngminhhoang/duriu-open:latest .
+        run: docker build -t ngminhoang/duriu-open:latest .
       
       - name: Push Docker image
-        run: docker push ngminhhoang/duriu-open:latest
+        run: docker push ngminhoang/duriu-open:latest
   
 
