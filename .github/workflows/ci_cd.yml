@@ -32,5 +32,7 @@ jobs:
       
       - name: Push Docker image
         run: docker push ngminhoang/duriu-open:latest
-  
+      
+      - name: Trigger Render Deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
 
